@@ -2,12 +2,15 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
-const { request } = require('http');
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
+
 //atlas url
-const url = process.env.ATLAS_URL;
+const url = process.env.ATLAS_URI;
 
 //mongodb connect
 mongoose.connect(url)
