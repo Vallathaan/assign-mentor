@@ -13,7 +13,7 @@ app.use(express.json());
 const url = process.env.ATLAS_URI;
 
 //mongodb connect
-mongoose.createConnection(url)
+mongoose.connect(url)
     .then(() => {
         console.log("connected to atlas mongodb");
     })
